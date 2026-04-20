@@ -3,13 +3,23 @@ name: My First Workflow
 on: push
 
 jobs:
-    say-hello:
-        runs-on: ubuntu-latest
+  job1:
+    runs-on: ubuntu-latest
 
-        steps:
+    steps:
             - name: Print message
               run: echo "Hello, Github Actions!"
             - name: Print name
               run: echo "Sumiti"
             - name: Print Bye
               run: echo "bye github action"
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    
+    steps:
+        - name: print message
+        run: echo "bye from second jon"
+        
+        
+  
