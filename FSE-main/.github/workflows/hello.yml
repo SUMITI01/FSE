@@ -1,0 +1,25 @@
+name: My First Workflow
+
+on: push
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+
+    steps:
+        - name: Print message
+          run: echo "Hello, Github Actions!"
+        - name: Print name
+          run: echo "Sumiti"
+        - name: Print Bye
+          run: echo "bye github action"
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    
+    steps:
+        - name: print message
+          run: echo "bye from second job"
+        
+        
+  
